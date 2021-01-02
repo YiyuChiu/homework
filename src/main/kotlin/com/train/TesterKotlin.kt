@@ -14,6 +14,7 @@ fun main() {
 
 private fun inputIntCheck(msg : String): Int {
     val IS_NOT_INT_ERR_MSG = "Input errors, please re-enter."
+
     val sc = Scanner(System.`in`)
     var num: Int?
     do {
@@ -28,11 +29,15 @@ private fun inputIntCheck(msg : String): Int {
 }
 
 class Ticket(var OneWayTicketsNum: Int, var RoundTripTicketsNum: Int) {
+    val ONE_WAY_PRICE = 1000
+    val ROUND_TRIP_PRICE = 2000
+    val ROUND_TRIP_DISC = 0.9
+
     fun getTotal() {
         println(
             "Total tickets: ${OneWayTicketsNum + RoundTripTicketsNum} " +
                     "Round-trip: $RoundTripTicketsNum " +
-                    "Total: ${(OneWayTicketsNum * 1000 + RoundTripTicketsNum * 2000 * 0.9).toInt()}"
+                    "Total: ${(OneWayTicketsNum*ONE_WAY_PRICE + RoundTripTicketsNum*ROUND_TRIP_PRICE*ROUND_TRIP_DISC).toInt()}"
         )
     }
 }

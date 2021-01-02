@@ -3,9 +3,9 @@ package com.train;
 import java.util.Scanner;
 
 public class Tester {
-    static String ASK_ONEWAY_NUM_MSG = "Please enter number of tickets:";
-    static String ASK_ROUND_TRIP_NUM_MSG = "How many round-trip tickets:";
-    static String IS_NOT_INT_ERR_MSG = "Input errors, please re-enter.";
+    final static String ASK_ONEWAY_NUM_MSG = "Please enter number of tickets:";
+    final static String ASK_ROUND_TRIP_NUM_MSG = "How many round-trip tickets:";
+    final static String IS_NOT_INT_ERR_MSG = "Input errors, please re-enter.";
 
     public static void main(String[] args) {
         int oneWayTicketsNum = inputIntCheck(ASK_ONEWAY_NUM_MSG);

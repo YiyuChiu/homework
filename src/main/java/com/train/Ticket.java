@@ -1,20 +1,25 @@
 package com.train;
 
 public class Ticket {
-    static String TotalMsg = "Total tickets: %d Round-trip: %d Total: %.0f";
-    int OneWayTicketsNum;
-    int RoundTripTicketsNum;
+    final String TOTAL_MSG = "Total tickets: %d Round-trip: %d Total: %.0f";
+    final int ONE_WAY_PRICE = 1000;
+    final int ROUND_TRIP_PRICE = 2000;
+    final float ROUND_TRIP_DISC = 0.9f;
 
-    public Ticket(int oneWayTicketsNum, int roundTripTicketsNum) {
-        OneWayTicketsNum = oneWayTicketsNum;
-        RoundTripTicketsNum = roundTripTicketsNum;
+    int OneWayNum;
+    int RoundTripNum;
+
+
+    public Ticket(int oneWayNum, int roundTripNum) {
+        OneWayNum = oneWayNum;
+        RoundTripNum = roundTripNum;
     }
 
     public String getTotal(){
-        return String.format(TotalMsg,
-                OneWayTicketsNum+RoundTripTicketsNum,
-                RoundTripTicketsNum,
-                OneWayTicketsNum*1000+RoundTripTicketsNum*2000*0.9);
+        return String.format(TOTAL_MSG,
+                OneWayNum + RoundTripNum,
+                RoundTripNum,
+                OneWayNum* ONE_WAY_PRICE + RoundTripNum* ROUND_TRIP_PRICE * ROUND_TRIP_DISC);
     }
 
 }
